@@ -32,7 +32,7 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/BendosTeam/bendos.git"
+- "url": "https://github.com/deyoonoo/bendos.git"
   "dir": "bendos"
 files: []
 script: |
