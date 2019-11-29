@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=BDS Core
+Comment=BDS P2P Cryptocurrency
+Comment[fr]=BDS, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=BDS, eşten eşe kriptografik sanal para birimi
+Exec=bds-qt %u
+Terminal=false
+Type=Application
+Icon=bds128
+MimeType=x-scheme-handler/bds;
+Categories=Office;Finance;
+StartupWMClass=Pny-qt

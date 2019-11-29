@@ -1,0 +1,6 @@
+usr/local/bin/bds-qt usr/bin
+share/pixmaps/bds32.xpm usr/share/pixmaps
+share/pixmaps/bds16.xpm usr/share/pixmaps
+share/pixmaps/bds128.png usr/share/pixmaps
+debian/bds-qt.desktop usr/share/applications
+debian/bds-qt.protocol usr/share/kde4/services/

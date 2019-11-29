@@ -1,0 +1,3 @@
+usr/local/bin/bdsd usr/bin
+usr/local/bin/bds-cli usr/bin
+debian/examples/bds.conf etc/bds
