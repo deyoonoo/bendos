@@ -2487,7 +2487,7 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
         <translation>PRIVACY</translation>
     </message>
     <message>
-        <source>Enter an amount of Pny to convert to zBDS</source>
+        <source>Enter an amount of BDS to convert to zBDS</source>
         <translation>Vul het aantal BDS in om te converteren naar zBDS</translation>
     </message>
     <message>
@@ -2524,7 +2524,7 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
 zBDS are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
         <translation>Beschikbare (volwwassen en uitgeefbaar) zBDS voor besteding
 
-zPny zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 muntages van dezelfde denominaties nadat zij gemunt zijn.</translation>
+zBDS zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 muntages van dezelfde denominaties nadat zij gemunt zijn.</translation>
     </message>
     <message>
         <source>0 zBDS</source>
@@ -2966,8 +2966,8 @@ Maximaal toegestaan:</translation>
         <translation>Geen 'Betaal aan' adres verstrekt, lokale betaling wordt gemaakt</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
-        <translation>Ongeldig Pny addres</translation>
+        <source>Invalid BDS Address</source>
+        <translation>Ongeldig BDS addres</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -4909,7 +4909,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>Select zBDS to Spend</source>
         <translation>Selecteer zBDS om te besteden</translation>

@@ -2388,7 +2388,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bds.conf</
         <translation>프라이버시</translation>
     </message>
     <message>
-        <source>Enter an amount of Pny to convert to zBDS</source>
+        <source>Enter an amount of BDS to convert to zBDS</source>
         <translation>zBDS로 변환할 BDS 수량을 입력하세요.</translation>
     </message>
     <message>
@@ -2856,7 +2856,7 @@ Maximum allowed: </source>
         <translation>주소를 입력하지 않아, 신규 주소를 생성합니다.</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
+        <source>Invalid BDS Address</source>
         <translation>잘못된 BDS 주소</translation>
     </message>
     <message>
@@ -4759,7 +4759,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>Select zBDS to Spend</source>
         <translation>사용할 zBDS 선택</translation>

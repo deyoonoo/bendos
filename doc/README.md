@@ -42,7 +42,7 @@ The following are developer notes on how to build BDS on your native platform. T
 
 Development
 ---------------------
-The Pny repo's [root README](https://github.com/BendosTeam/BDS/blob/master/README.md) contains relevant information on the development process and automated testing.
+The BDS repo's [root README](https://github.com/BendosTeam/BDS/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)

@@ -99,10 +99,10 @@ void OptionsModel::Init()
         settings.setValue("nPreferredDenom", 0);
     nPreferredDenom = settings.value("nPreferredDenom", "0").toLongLong();
 
-    if (!settings.contains("nAnonymizePnyAmount"))
-        settings.setValue("nAnonymizePnyAmount", 1000);
+    if (!settings.contains("nAnonymizeBDSAmount"))
+        settings.setValue("nAnonymizeBDSAmount", 1000);
 
-    nAnonymizePnyAmount = settings.value("nAnonymizePnyAmount").toLongLong();
+    nAnonymizeBDSAmount = settings.value("nAnonymizeBDSAmount").toLongLong();
 
     if (!settings.contains("fShowMasternodesTab"))
         settings.setValue("fShowMasternodesTab", masternodeConfig.getCount());
@@ -178,8 +178,8 @@ void OptionsModel::Init()
         SoftSetArg("-zeromintpercentage", settings.value("nZeromintPercentage").toString().toStdString());
     if (settings.contains("nPreferredDenom"))
         SoftSetArg("-preferredDenom", settings.value("nPreferredDenom").toString().toStdString());
-    if (settings.contains("nAnonymizePnyAmount"))
-        SoftSetArg("-anonymizebdsamount", settings.value("nAnonymizePnyAmount").toString().toStdString());
+    if (settings.contains("nAnonymizeBDSAmount"))
+        SoftSetArg("-anonymizebdsamount", settings.value("nAnonymizeBDSAmount").toString().toStdString());
 
     language = settings.value("language").toString();
 }
@@ -274,8 +274,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return QVariant(nZeromintPercentage);
         case ZeromintPrefDenom:
             return QVariant(nPreferredDenom);
-        case AnonymizePnyAmount:
-            return QVariant(nAnonymizePnyAmount);
+        case AnonymizeBDSAmount:
+            return QVariant(nAnonymizeBDSAmount);
         case Listen:
             return settings.value("fListen");
         default:
@@ -412,10 +412,10 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             settings.setValue("fHideOrphans", fHideOrphans);
             emit hideOrphansChanged(fHideOrphans);
             break;
-        case AnonymizePnyAmount:
-            nAnonymizePnyAmount = value.toInt();
-            settings.setValue("nAnonymizePnyAmount", nAnonymizePnyAmount);
-            emit anonymizePnyAmountChanged(nAnonymizePnyAmount);
+        case AnonymizeBDSAmount:
+            nAnonymizeBDSAmount = value.toInt();
+            settings.setValue("nAnonymizeBDSAmount", nAnonymizeBDSAmount);
+            emit anonymizeBDSAmountChanged(nAnonymizeBDSAmount);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();

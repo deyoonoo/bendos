@@ -670,11 +670,11 @@
     </message>
     <message>
         <source>&amp;About BDS Core</source>
-        <translation>Pny core Hakkında</translation>
+        <translation>BDS core Hakkında</translation>
     </message>
     <message>
         <source>Show information about BDS Core</source>
-        <translation>Pny Core hakkında bilgi göster</translation>
+        <translation>BDS Core hakkında bilgi göster</translation>
     </message>
     <message>
         <source>Modify configuration options for BDS</source>
@@ -2257,7 +2257,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bds.conf</
     </message>
     <message>
         <source>Cannot start bds: click-to-pay handler</source>
-        <translation>Pny başlatılamıyor: tıkla ve ödeme işleyicisi</translation>
+        <translation>BDS başlatılamıyor: tıkla ve ödeme işleyicisi</translation>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid BDS address or malformed URI parameters.</source>
@@ -2410,8 +2410,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bds.conf</
         <translation>GİZLİLİK</translation>
     </message>
     <message>
-        <source>Enter an amount of Pny to convert to zBDS</source>
-        <translation>ZPny'e dönüştürmek için bir miktar Pny girin</translation>
+        <source>Enter an amount of BDS to convert to zBDS</source>
+        <translation>ZBDS'e dönüştürmek için bir miktar BDS girin</translation>
     </message>
     <message>
         <source>zBDS Control</source>
@@ -2419,7 +2419,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bds.conf</
     </message>
     <message>
         <source>zBDS Selected:</source>
-        <translation>zPny Seçildi:</translation>
+        <translation>zBDS Seçildi:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2740,8 +2740,8 @@ Maksimum bırakılan: </translation>
         <translation>Sağlanan 'Ödeme Yapmak İçin' adresi yok, yerel ödeme oluşturun</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
-        <translation>Geçersiz Pny Adresi</translation>
+        <source>Invalid BDS Address</source>
+        <translation>Geçersiz BDS Adresi</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -4506,7 +4506,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>Quantity</source>
         <translation>Adet</translation>

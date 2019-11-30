@@ -1299,7 +1299,7 @@ MultiSend: %1</translation>
     </message>
     </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     </context>
 <context>
     <name>bds-core</name>

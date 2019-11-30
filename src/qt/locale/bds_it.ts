@@ -1909,7 +1909,7 @@ Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=
         <translation>PRIVACY</translation>
     </message>
     <message>
-        <source>Enter an amount of Pny to convert to zBDS</source>
+        <source>Enter an amount of BDS to convert to zBDS</source>
         <translation>Immetti un importo di BDS da convertire in zBDS</translation>
     </message>
     <message>
@@ -2645,7 +2645,7 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

@@ -2392,8 +2392,8 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>PRIVATNOST</translation>
     </message>
     <message>
-        <source>Enter an amount of Pny to convert to zBDS</source>
-        <translation>Unesite iznos Pny za pretvorbu u zBDS</translation>
+        <source>Enter an amount of BDS to convert to zBDS</source>
+        <translation>Unesite iznos BDS za pretvorbu u zBDS</translation>
     </message>
     <message>
         <source>zBDS Control</source>
@@ -2856,8 +2856,8 @@ Maksimalno dopušteno:</translation>
         <translation>Nije dodijeljena adresa "Plati", stvarajući lokalnu uplatu</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
-        <translation>Nevažeća Pny Adresa</translation>
+        <source>Invalid BDS Address</source>
+        <translation>Nevažeća BDS Adresa</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -4762,7 +4762,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>Select zBDS to Spend</source>
         <translation>Odabrani zBDS za utrošiti</translation>

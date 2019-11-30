@@ -2511,7 +2511,7 @@ Pour activer Auto-monnayage, changez 'enablezeromint = 0' en 'enablezeromint = 1
         <translation>CONFIDENTIALITÉ</translation>
     </message>
     <message>
-        <source>Enter an amount of Pny to convert to zBDS</source>
+        <source>Enter an amount of BDS to convert to zBDS</source>
         <translation>Entrez un montant de BDS à convertir en zBDS</translation>
     </message>
     <message>
@@ -2991,8 +2991,8 @@ Maximum autorisé:</translation>
         <translation>Aucune adresse 'Payer à' de fournie, création d'un paiement local</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
-        <translation>Adresse Pny incorrecte</translation>
+        <source>Invalid BDS Address</source>
+        <translation>Adresse BDS incorrecte</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -5023,7 +5023,7 @@ S'il vous plaît soyez patient ...</translation>
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>Select zBDS to Spend</source>
         <translation>Choisir les zBDS à dépenser</translation>

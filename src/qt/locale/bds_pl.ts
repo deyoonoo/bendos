@@ -2544,8 +2544,8 @@ Aby włączyć AutoMint zmień "enablezeromint = 0" na "enablezeromint = 1" w pl
         <translation>PRYWATNOŚĆ</translation>
     </message>
     <message>
-        <source>Enter an amount of Pny to convert to zBDS</source>
-        <translation>Wprowadź ilość Pny, aby przekonwertować na zBDS</translation>
+        <source>Enter an amount of BDS to convert to zBDS</source>
+        <translation>Wprowadź ilość BDS, aby przekonwertować na zBDS</translation>
     </message>
     <message>
         <source>zBDS Control</source>
@@ -3024,8 +3024,8 @@ Maksymalna dozwolona:</translation>
         <translation>Nie podano adresu "Zapłać do", tworząc płatność lokalną</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
-        <translation>Nieprawidłowy adres Pny</translation>
+        <source>Invalid BDS Address</source>
+        <translation>Nieprawidłowy adres BDS</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -5081,7 +5081,7 @@ Proszę być cierpliwym...</translation>
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>Select zBDS to Spend</source>
         <translation>Wybierz zBDS do wydania</translation>

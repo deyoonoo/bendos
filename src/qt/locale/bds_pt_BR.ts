@@ -3614,7 +3614,7 @@ https://www.transifex.com/BendosTeam/BendosTeam-translations</translation>
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>Quantity</source>
         <translation>Quantia</translation>

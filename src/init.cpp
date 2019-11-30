@@ -1774,8 +1774,8 @@ bool AppInit2()
 
         pwalletMain->InitAutoConvertAddresses();
 
-        bool fEnableZPnyBackups = GetBoolArg("-backupzbds", true);
-        pwalletMain->setZPnyAutoBackups(fEnableZPnyBackups);
+        bool fEnableZBDSBackups = GetBoolArg("-backupzbds", true);
+        pwalletMain->setZBDSAutoBackups(fEnableZBDSBackups);
 
         //Load zerocoin mint hashes to memory
         pwalletMain->zbdsTracker->Init();
@@ -1928,7 +1928,7 @@ bool AppInit2()
     }
 
 // XX42 Remove/refactor code below. Until then provide safe defaults
-    nAnonymizePnyAmount = 2;
+    nAnonymizeBDSAmount = 2;
 
 //    nLiquidityProvider = GetArg("-liquidityprovider", 0); //0-100
 //    if (nLiquidityProvider != 0) {
@@ -1937,9 +1937,9 @@ bool AppInit2()
 //        nZeromintPercentage = 99999;
 //    }
 //
-//    nAnonymizePnyAmount = GetArg("-anonymizebdsamount", 0);
-//    if (nAnonymizePnyAmount > 999999) nAnonymizePnyAmount = 999999;
-//    if (nAnonymizePnyAmount < 2) nAnonymizePnyAmount = 2;
+//    nAnonymizeBDSAmount = GetArg("-anonymizebdsamount", 0);
+//    if (nAnonymizeBDSAmount > 999999) nAnonymizeBDSAmount = 999999;
+//    if (nAnonymizeBDSAmount < 2) nAnonymizeBDSAmount = 2;
 
     fEnableSwiftTX = GetBoolArg("-enableswifttx", fEnableSwiftTX);
     nSwiftTXDepth = GetArg("-swifttxdepth", nSwiftTXDepth);
@@ -1953,7 +1953,7 @@ bool AppInit2()
 
     LogPrintf("fLiteMode %d\n", fLiteMode);
     LogPrintf("nSwiftTXDepth %d\n", nSwiftTXDepth);
-    LogPrintf("Anonymize BDS Amount %d\n", nAnonymizePnyAmount);
+    LogPrintf("Anonymize BDS Amount %d\n", nAnonymizeBDSAmount);
     LogPrintf("Budget Mode %s\n", strBudgetMode.c_str());
 
     /* Denominations

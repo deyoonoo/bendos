@@ -35,7 +35,7 @@ public:
 // zBDSStake can take two forms
 // 1) the stake candidate, which is a zcmint that is attempted to be staked
 // 2) a staked zbds, which is a zcspend that has successfully staked
-class CZPnyStake : public CStakeInput
+class CZBDSStake : public CStakeInput
 {
 private:
     uint32_t nChecksum;
@@ -44,7 +44,7 @@ private:
     uint256 hashSerial;
 
 public:
-    explicit CZPnyStake(libzerocoin::CoinDenomination denom, const uint256& hashSerial)
+    explicit CZBDSStake(libzerocoin::CoinDenomination denom, const uint256& hashSerial)
     {
         this->denom = denom;
         this->hashSerial = hashSerial;
@@ -52,7 +52,7 @@ public:
         fMint = true;
     }
 
-    explicit CZPnyStake(const libzerocoin::CoinSpend& spend);
+    explicit CZBDSStake(const libzerocoin::CoinSpend& spend);
 
     CBlockIndex* GetIndexFrom() override;
     bool GetTxFrom(CTransaction& tx) override;
@@ -69,13 +69,13 @@ public:
     uint32_t GetChecksum();
 };
 
-class CPnyStake : public CStakeInput
+class CBDSStake : public CStakeInput
 {
 private:
     CTransaction txFrom;
     unsigned int nPosition;
 public:
-    CPnyStake()
+    CBDSStake()
     {
         this->pindexFrom = nullptr;
     }

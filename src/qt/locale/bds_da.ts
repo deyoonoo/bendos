@@ -2430,8 +2430,8 @@ For at aktivere AutoMint-ændring 'enablezeromint = 0' til 'enablezeromint = 1' 
         <translation>PRIVATLIV</translation>
     </message>
     <message>
-        <source>Enter an amount of Pny to convert to zBDS</source>
-        <translation>Indtast en mængde Pny for at konvertere til zPny</translation>
+        <source>Enter an amount of BDS to convert to zBDS</source>
+        <translation>Indtast en mængde BDS for at konvertere til zBDS</translation>
     </message>
     <message>
         <source>zBDS Control</source>
@@ -2897,7 +2897,7 @@ Maksimum tilladt:</translation>
         <translation>Ingen 'Betal til' adresse, der er oprettet, skaber lokal betaling</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
+        <source>Invalid BDS Address</source>
         <translation> Ugyldig BDS adresse</translation>
     </message>
     <message>
@@ -4525,11 +4525,11 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     </message>
     <message>
         <source>Spent zBDS</source>
-        <translation>Brugt zPny</translation>
+        <translation>Brugt zBDS</translation>
     </message>
     <message>
         <source>Received BDS from zBDS</source>
-        <translation>Modtaget Pny fra zPny</translation>
+        <translation>Modtaget BDS fra zBDS</translation>
     </message>
     <message>
         <source>Minted Change as zBDS from zBDS Spend</source>
@@ -4756,7 +4756,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     </message>
     <message>
         <source>Received BDS from zBDS</source>
-        <translation>Modtaget Pny fra zPny</translation>
+        <translation>Modtaget BDS fra zBDS</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zBDS</source>
@@ -4828,7 +4828,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>Select zBDS to Spend</source>
         <translation>Vælg zBDS for at bruge</translation>
@@ -4907,7 +4907,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     </message>
     <message>
         <source>Enable automatic wallet backups triggered after each zBDS minting (0-1, default: %u)</source>
-        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zPny-mintning (0-1, standard: %u)</translation>
+        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zBDS-mintning (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for BDS inputs (0-1, default: %u)</source>

@@ -881,12 +881,12 @@ QDialog#HelpMessageDialog QScrollBar:vertical, QDialog#HelpMessageDialog QScroll
 border:0;
 }
 
-/* About Pny Dialog */
-QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Pny Contents */
+/* About BDS Dialog */
+QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About BDS Contents */
 margin-left:10px;
 }
 
-QDialog#AboutDialog QLabel#label_2 { /* Margin for About Pny text */
+QDialog#AboutDialog QLabel#label_2 { /* Margin for About BDS text */
 margin-right:10px;
 }
 
@@ -1556,7 +1556,7 @@ QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::indicator { /* Coin
 
 }
 
-QDialog#ZPnyControlDialog .QTreeWidget#treeWidget { /* zBDS Control Widget Container */
+QDialog#ZBDSControlDialog .QTreeWidget#treeWidget { /* zBDS Control Widget Container */
 outline:0;
 background-color:#ffffff;
 border:1px solid #333;

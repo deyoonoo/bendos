@@ -368,7 +368,7 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::uniqu
         if (spend.getSpendType() != libzerocoin::SpendType::STAKE)
             return error("%s: spend is using the wrong SpendType (%d)", __func__, (int)spend.getSpendType());
 
-        stake = std::unique_ptr<CStakeInput>(new CZPnyStake(spend));
+        stake = std::unique_ptr<CStakeInput>(new CZBDSStake(spend));
     } else {
         // First try finding the previous transaction in database
         uint256 hashBlock;
@@ -380,7 +380,7 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake, std::uniqu
         if (!VerifyScript(txin.scriptSig, txPrev.vout[txin.prevout.n].scriptPubKey, STANDARD_SCRIPT_VERIFY_FLAGS, TransactionSignatureChecker(&tx, 0)))
             return error("CheckProofOfStake() : VerifySignature failed on coinstake %s", tx.GetHash().ToString().c_str());
 
-        CPnyStake* bdsInput = new CPnyStake();
+        CBDSStake* bdsInput = new CBDSStake();
         bdsInput->SetInput(txPrev, txin.prevout.n);
         stake = std::unique_ptr<CStakeInput>(bdsInput);
     }

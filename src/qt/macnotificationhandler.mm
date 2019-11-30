@@ -14,7 +14,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"io.bds.Pny-Qt";
+        return @"io.bds.BDS-Qt";
     } else {
         return [self __bundleIdentifier];
     }

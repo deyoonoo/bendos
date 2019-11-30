@@ -9,7 +9,7 @@
 #include "stakeinput.h"
 #include "wallet/wallet.h"
 
-CZPnyStake::CZPnyStake(const libzerocoin::CoinSpend& spend)
+CZBDSStake::CZBDSStake(const libzerocoin::CoinSpend& spend)
 {
     this->nChecksum = spend.getAccumulatorChecksum();
     this->denom = spend.getDenomination();
@@ -19,7 +19,7 @@ CZPnyStake::CZPnyStake(const libzerocoin::CoinSpend& spend)
     fMint = false;
 }
 
-int CZPnyStake::GetChecksumHeightFromMint()
+int CZBDSStake::GetChecksumHeightFromMint()
 {
     int nHeightChecksum = chainActive.Height() - Params().Zerocoin_RequiredStakeDepth();
 
@@ -30,12 +30,12 @@ int CZPnyStake::GetChecksumHeightFromMint()
     return GetChecksumHeight(nChecksum, denom);
 }
 
-int CZPnyStake::GetChecksumHeightFromSpend()
+int CZBDSStake::GetChecksumHeightFromSpend()
 {
     return GetChecksumHeight(nChecksum, denom);
 }
 
-uint32_t CZPnyStake::GetChecksum()
+uint32_t CZBDSStake::GetChecksum()
 {
     return nChecksum;
 }
@@ -43,7 +43,7 @@ uint32_t CZPnyStake::GetChecksum()
 // The zBDS block index is the first appearance of the accumulator checksum that was used in the spend
 // note that this also means when staking that this checksum should be from a block that is beyond 60 minutes old and
 // 100 blocks deep.
-CBlockIndex* CZPnyStake::GetIndexFrom()
+CBlockIndex* CZBDSStake::GetIndexFrom()
 {
     if (pindexFrom)
         return pindexFrom;
@@ -65,14 +65,14 @@ CBlockIndex* CZPnyStake::GetIndexFrom()
     return pindexFrom;
 }
 
-CAmount CZPnyStake::GetValue()
+CAmount CZBDSStake::GetValue()
 {
     return denom * COIN;
 }
 
 //Use the first accumulator checkpoint that occurs 60 minutes after the block being staked from
 // In case of regtest, next accumulator of 60 blocks after the block being staked from
-bool CZPnyStake::GetModifier(uint64_t& nStakeModifier)
+bool CZBDSStake::GetModifier(uint64_t& nStakeModifier)
 {
     CBlockIndex* pindex = GetIndexFrom();
     if (!pindex)
@@ -98,7 +98,7 @@ bool CZPnyStake::GetModifier(uint64_t& nStakeModifier)
     }
 }
 
-CDataStream CZPnyStake::GetUniqueness()
+CDataStream CZBDSStake::GetUniqueness()
 {
     //The unique identifier for a zBDS is a hash of the serial
     CDataStream ss(SER_GETHASH, 0);
@@ -106,7 +106,7 @@ CDataStream CZPnyStake::GetUniqueness()
     return ss;
 }
 
-bool CZPnyStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
+bool CZBDSStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
 {
     CBlockIndex* pindexCheckpoint = GetIndexFrom();
     if (!pindexCheckpoint)
@@ -126,7 +126,7 @@ bool CZPnyStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
     return true;
 }
 
-bool CZPnyStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
+bool CZBDSStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
 {
     //Create an output returning the zBDS that was staked
     CTxOut outReward;
@@ -154,12 +154,12 @@ bool CZPnyStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nT
     return true;
 }
 
-bool CZPnyStake::GetTxFrom(CTransaction& tx)
+bool CZBDSStake::GetTxFrom(CTransaction& tx)
 {
     return false;
 }
 
-bool CZPnyStake::MarkSpent(CWallet *pwallet, const uint256& txid)
+bool CZBDSStake::MarkSpent(CWallet *pwallet, const uint256& txid)
 {
     CzBDSTracker* zbdsTracker = pwallet->zbdsTracker.get();
     CMintMeta meta;
@@ -171,31 +171,31 @@ bool CZPnyStake::MarkSpent(CWallet *pwallet, const uint256& txid)
 }
 
 //!BDS Stake
-bool CPnyStake::SetInput(CTransaction txPrev, unsigned int n)
+bool CBDSStake::SetInput(CTransaction txPrev, unsigned int n)
 {
     this->txFrom = txPrev;
     this->nPosition = n;
     return true;
 }
 
-bool CPnyStake::GetTxFrom(CTransaction& tx)
+bool CBDSStake::GetTxFrom(CTransaction& tx)
 {
     tx = txFrom;
     return true;
 }
 
-bool CPnyStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
+bool CBDSStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
 {
     txIn = CTxIn(txFrom.GetHash(), nPosition);
     return true;
 }
 
-CAmount CPnyStake::GetValue()
+CAmount CBDSStake::GetValue()
 {
     return txFrom.vout[nPosition].nValue;
 }
 
-bool CPnyStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
+bool CBDSStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
 {
     vector<valtype> vSolutions;
     txnouttype whichType;
@@ -230,7 +230,7 @@ bool CPnyStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTo
     return true;
 }
 
-bool CPnyStake::GetModifier(uint64_t& nStakeModifier)
+bool CBDSStake::GetModifier(uint64_t& nStakeModifier)
 {
     int nStakeModifierHeight = 0;
     int64_t nStakeModifierTime = 0;
@@ -244,7 +244,7 @@ bool CPnyStake::GetModifier(uint64_t& nStakeModifier)
     return true;
 }
 
-CDataStream CPnyStake::GetUniqueness()
+CDataStream CBDSStake::GetUniqueness()
 {
     //The unique identifier for a BDS stake is the outpoint
     CDataStream ss(SER_NETWORK, 0);
@@ -253,7 +253,7 @@ CDataStream CPnyStake::GetUniqueness()
 }
 
 //The block that the UTXO was added to the chain
-CBlockIndex* CPnyStake::GetIndexFrom()
+CBlockIndex* CBDSStake::GetIndexFrom()
 {
     uint256 hashBlock = 0;
     CTransaction tx;

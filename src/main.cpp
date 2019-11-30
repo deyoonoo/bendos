@@ -3234,7 +3234,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     pindex->nMoneySupply = nMoneySupplyPrev + nValueOut - nValueIn;
     pindex->nMint = pindex->nMoneySupply - nMoneySupplyPrev + nFees;
 
-//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zPnySpent: %s\n",
+//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zBDSSpent: %s\n",
 //              FormatMoney(nValueOut), FormatMoney(nValueIn),
 //              FormatMoney(nFees), FormatMoney(pindex->nMint), FormatMoney(nAmountZerocoinSpent));
 
@@ -4539,7 +4539,7 @@ bool ContextualCheckZerocoinStake(int nHeight, CStakeInput* stake)
     if (nHeight < Params().Zerocoin_Block_V2_Start())
         return error("%s: zBDS stake block is less than allowed start height", __func__);
 
-    if (CZPnyStake* zBDS = dynamic_cast<CZPnyStake*>(stake)) {
+    if (CZBDSStake* zBDS = dynamic_cast<CZBDSStake*>(stake)) {
         CBlockIndex* pindexFrom = zBDS->GetIndexFrom();
         if (!pindexFrom)
             return error("%s: failed to get index associated with zBDS stake checksum", __func__);
@@ -4746,8 +4746,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
 
             // Now that this loop if completed. Check if we have zBDS inputs.
             if(hasZBDSInputs){
-                for (const CTxIn& zPnyInput : zBDSInputs) {
-                    CoinSpend spend = TxInToZerocoinSpend(zPnyInput);
+                for (const CTxIn& zBDSInput : zBDSInputs) {
+                    CoinSpend spend = TxInToZerocoinSpend(zBDSInput);
 
                     // First check if the serials were not already spent on the forked blocks.
                     CBigNum coinSerial = spend.getCoinSerialNumber();
@@ -4809,8 +4809,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
             }
         } else {
             if(!isBlockFromFork)
-                for (const CTxIn& zPnyInput : zBDSInputs) {
-                        CoinSpend spend = TxInToZerocoinSpend(zPnyInput);
+                for (const CTxIn& zBDSInput : zBDSInputs) {
+                        CoinSpend spend = TxInToZerocoinSpend(zBDSInput);
                         if (!ContextualCheckZerocoinSpend(stakeTxIn, spend, pindex, 0))
                             return state.DoS(100,error("%s: main chain ContextualCheckZerocoinSpend failed for tx %s", __func__,
                                     stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zbds");

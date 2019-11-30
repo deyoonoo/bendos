@@ -13,7 +13,7 @@
 
 /**
  * CBaseChainParams defines the base parameters (shared between bds-cli and bdsd)
- * of a given instance of the Pny system.
+ * of a given instance of the BDS system.
  */
 class CBaseChainParams
 {

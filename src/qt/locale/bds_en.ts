@@ -3235,7 +3235,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     <message>
         <location line="+308"/>
         <location line="+52"/>
-        <source>Enter an amount of Pny to convert to zBDS</source>
+        <source>Enter an amount of BDS to convert to zBDS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3860,7 +3860,7 @@ Maximum allowed: </source>
     </message>
     <message>
         <location line="+4"/>
-        <source>Invalid Pny Address</source>
+        <source>Invalid BDS Address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6516,7 +6516,7 @@ Please be patient...</source>
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <location filename="../forms/zbdscontroldialog.ui" line="+20"/>
         <source>Select zBDS to Spend</source>

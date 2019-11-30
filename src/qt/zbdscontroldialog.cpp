@@ -12,20 +12,20 @@
 using namespace std;
 using namespace libzerocoin;
 
-std::set<std::string> ZPnyControlDialog::setSelectedMints;
-std::set<CMintMeta> ZPnyControlDialog::setMints;
+std::set<std::string> ZBDSControlDialog::setSelectedMints;
+std::set<CMintMeta> ZBDSControlDialog::setMints;
 
-bool CZPnyControlWidgetItem::operator<(const QTreeWidgetItem &other) const {
+bool CZBDSControlWidgetItem::operator<(const QTreeWidgetItem &other) const {
     int column = treeWidget()->sortColumn();
-    if (column == ZPnyControlDialog::COLUMN_DENOMINATION || column == ZPnyControlDialog::COLUMN_VERSION || column == ZPnyControlDialog::COLUMN_CONFIRMATIONS)
+    if (column == ZBDSControlDialog::COLUMN_DENOMINATION || column == ZBDSControlDialog::COLUMN_VERSION || column == ZBDSControlDialog::COLUMN_CONFIRMATIONS)
         return data(column, Qt::UserRole).toLongLong() < other.data(column, Qt::UserRole).toLongLong();
     return QTreeWidgetItem::operator<(other);
 }
 
 
-ZPnyControlDialog::ZPnyControlDialog(QWidget *parent) :
+ZBDSControlDialog::ZBDSControlDialog(QWidget *parent) :
     QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint),
-    ui(new Ui::ZPnyControlDialog),
+    ui(new Ui::ZBDSControlDialog),
     model(0)
 {
     ui->setupUi(this);
@@ -39,12 +39,12 @@ ZPnyControlDialog::ZPnyControlDialog(QWidget *parent) :
     connect(ui->pushButtonAll, SIGNAL(clicked()), this, SLOT(ButtonAllClicked()));
 }
 
-ZPnyControlDialog::~ZPnyControlDialog()
+ZBDSControlDialog::~ZBDSControlDialog()
 {
     delete ui;
 }
 
-void ZPnyControlDialog::setModel(WalletModel *model)
+void ZBDSControlDialog::setModel(WalletModel *model)
 {
     this->model = model;
     updateList();
@@ -52,7 +52,7 @@ void ZPnyControlDialog::setModel(WalletModel *model)
 
 
 //Update the tree widget
-void ZPnyControlDialog::updateList()
+void ZBDSControlDialog::updateList()
 {
     // need to prevent the slot from being called each time something is changed
     ui->treeWidget->blockSignals(true);
@@ -62,7 +62,7 @@ void ZPnyControlDialog::updateList()
     QFlags<Qt::ItemFlag> flgTristate = Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsTristate;
     map<libzerocoin::CoinDenomination, int> mapDenomPosition;
     for (auto denom : libzerocoin::zerocoinDenomList) {
-        CZPnyControlWidgetItem* itemDenom(new CZPnyControlWidgetItem);
+        CZBDSControlWidgetItem* itemDenom(new CZBDSControlWidgetItem);
         ui->treeWidget->addTopLevelItem(itemDenom);
 
         //keep track of where this is positioned in tree widget
@@ -84,7 +84,7 @@ void ZPnyControlDialog::updateList()
     for (const CMintMeta& mint : setMints) {
         // assign this mint to the correct denomination in the tree view
         libzerocoin::CoinDenomination denom = mint.denom;
-        CZPnyControlWidgetItem *itemMint = new CZPnyControlWidgetItem(ui->treeWidget->topLevelItem(mapDenomPosition.at(denom)));
+        CZBDSControlWidgetItem *itemMint = new CZBDSControlWidgetItem(ui->treeWidget->topLevelItem(mapDenomPosition.at(denom)));
 
         // if the mint is already selected, then it needs to have the checkbox checked
         std::string strPubCoinHash = mint.hashPubcoin.GetHex();
@@ -158,7 +158,7 @@ void ZPnyControlDialog::updateList()
 }
 
 // Update the list when a checkbox is clicked
-void ZPnyControlDialog::updateSelection(QTreeWidgetItem* item, int column)
+void ZBDSControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 {
     // only want updates from non top level items that are available to spend
     if (item->parent() && column == COLUMN_CHECKBOX && !item->isDisabled()){
@@ -180,7 +180,7 @@ void ZPnyControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 }
 
 // Update the Quantity and Amount display
-void ZPnyControlDialog::updateLabels()
+void ZBDSControlDialog::updateLabels()
 {
     int64_t nAmount = 0;
     for (const CMintMeta& mint : setMints) {
@@ -189,14 +189,14 @@ void ZPnyControlDialog::updateLabels()
     }
 
     //update this dialog's labels
-    ui->labelZPny_int->setText(QString::number(nAmount));
+    ui->labelZBDS_int->setText(QString::number(nAmount));
     ui->labelQuantity_int->setText(QString::number(setSelectedMints.size()));
 
     //update PrivacyDialog labels
-    privacyDialog->setZPnyControlLabels(nAmount, setSelectedMints.size());
+    privacyDialog->setZBDSControlLabels(nAmount, setSelectedMints.size());
 }
 
-std::vector<CMintMeta> ZPnyControlDialog::GetSelectedMints()
+std::vector<CMintMeta> ZBDSControlDialog::GetSelectedMints()
 {
     std::vector<CMintMeta> listReturn;
     for (const CMintMeta& mint : setMints) {
@@ -208,7 +208,7 @@ std::vector<CMintMeta> ZPnyControlDialog::GetSelectedMints()
 }
 
 // select or deselect all of the mints
-void ZPnyControlDialog::ButtonAllClicked()
+void ZBDSControlDialog::ButtonAllClicked()
 {
     ui->treeWidget->blockSignals(true);
     Qt::CheckState state = Qt::Checked;

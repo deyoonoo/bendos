@@ -2145,7 +2145,7 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
             //add to our stake set
             nAmountSelected += out.tx->vout[out.i].nValue;
 
-            std::unique_ptr<CPnyStake> input(new CPnyStake());
+            std::unique_ptr<CBDSStake> input(new CBDSStake());
             input->SetInput((CTransaction) *out.tx, out.i);
             listInputs.emplace_back(std::move(input));
         }
@@ -2175,7 +2175,7 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
             if (meta.nVersion < CZerocoinMint::STAKABLE_VERSION)
                 continue;
             if (meta.nHeight < chainActive.Height() - Params().Zerocoin_RequiredStakeDepth()) {
-                std::unique_ptr<CZPnyStake> input(new CZPnyStake(meta.denom, meta.hashStake));
+                std::unique_ptr<CZBDSStake> input(new CZBDSStake(meta.denom, meta.hashStake));
                 listInputs.emplace_back(std::move(input));
             }
         }
@@ -3097,7 +3097,7 @@ bool CWallet::CreateCoinStake(
 
             //Mark mints as spent
             if (stakeInput->IsZBDS()) {
-                CZPnyStake* z = (CZPnyStake*)stakeInput.get();
+                CZBDSStake* z = (CZBDSStake*)stakeInput.get();
                 if (!z->MarkSpent(this, txNew.GetHash()))
                     return error("%s: failed to mark mint as used\n", __func__);
             }
@@ -4649,7 +4649,7 @@ bool CWallet::CreateZerocoinMintTransaction(const CAmount nValue, CMutableTransa
     }
 
     //any change that is less than 0.0100000 will be ignored and given as an extra fee
-    //also assume that a zerocoinspend that is minting the change will not have any change that goes to Pny
+    //also assume that a zerocoinspend that is minting the change will not have any change that goes to BDS
     CAmount nChange = nValueIn - nTotalValue; // Fee already accounted for in nTotalValue
     if (nChange > 1 * CENT && !isZCSpendChange) {
         // Fill a vout to ourself using the largest contributing address
@@ -5193,7 +5193,7 @@ string CWallet::GetUniqueWalletBackupName(bool fzbdsAuto) const
     return strprintf("wallet%s.dat%s", fzbdsAuto ? "-autozbdsbackup" : "", DateTimeStrFormat(".%Y-%m-%d-%H-%M", GetTime()));
 }
 
-void CWallet::ZPnyBackupWallet()
+void CWallet::ZBDSBackupWallet()
 {
     filesystem::path backupDir = GetDataDir() / "backups";
     filesystem::path backupPath;
@@ -5314,7 +5314,7 @@ string CWallet::MintZerocoin(CAmount nValue, CWalletTx& wtxNew, vector<CDetermin
 
     //Create a backup of the wallet
     if (fBackupMints)
-        ZPnyBackupWallet();
+        ZBDSBackupWallet();
 
     return "";
 }
@@ -5336,7 +5336,7 @@ bool CWallet::SpendZerocoin(CAmount nAmount, CWalletTx& wtxNew, CZerocoinSpendRe
     }
 
     if (fMintChange && fBackupMints)
-        ZPnyBackupWallet();
+        ZBDSBackupWallet();
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
     if (!CommitTransaction(wtxNew, reserveKey)) {

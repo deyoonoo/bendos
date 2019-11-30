@@ -2495,8 +2495,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bds.conf</
         <translation>PRIVACY</translation>
     </message>
     <message>
-        <source>Enter an amount of Pny to convert to zBDS</source>
-        <translation>Enter an amount of Pny to convert to zBDS</translation>
+        <source>Enter an amount of BDS to convert to zBDS</source>
+        <translation>Enter an amount of BDS to convert to zBDS</translation>
     </message>
     <message>
         <source>zBDS Control</source>
@@ -2975,8 +2975,8 @@ Maximum allowed: </translation>
         <translation>No 'Pay To' address provided, creating local payment</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
-        <translation>Invalid Pny Address</translation>
+        <source>Invalid BDS Address</source>
+        <translation>Invalid BDS Address</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -4934,7 +4934,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>Select zBDS to Spend</source>
         <translation>Select zBDS to Spend</translation>

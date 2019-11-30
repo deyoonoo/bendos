@@ -293,19 +293,19 @@ void PrivacyDialog::on_pushButtonSpendzBDS_clicked()
     sendzBDS();
 }
 
-void PrivacyDialog::on_pushButtonZPnyControl_clicked()
+void PrivacyDialog::on_pushButtonZBDSControl_clicked()
 {
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    ZPnyControlDialog* zPnyControl = new ZPnyControlDialog(this);
-    zPnyControl->setModel(walletModel);
-    zPnyControl->exec();
+    ZBDSControlDialog* zBDSControl = new ZBDSControlDialog(this);
+    zBDSControl->setModel(walletModel);
+    zBDSControl->exec();
 }
 
-void PrivacyDialog::setZPnyControlLabels(int64_t nAmount, int nQuantity)
+void PrivacyDialog::setZBDSControlLabels(int64_t nAmount, int nQuantity)
 {
-    ui->labelzPnySelected_int->setText(QString::number(nAmount));
+    ui->labelzBDSSelected_int->setText(QString::number(nAmount));
     ui->labelQuantitySelected_int->setText(QString::number(nQuantity));
 }
 
@@ -325,7 +325,7 @@ void PrivacyDialog::sendzBDS()
     }
     else{
         if (!address.IsValid()) {
-            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid Pny Address"), QMessageBox::Ok, QMessageBox::Ok);
+            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid BDS Address"), QMessageBox::Ok, QMessageBox::Ok);
             ui->payTo->setFocus();
             return;
         }
@@ -409,8 +409,8 @@ void PrivacyDialog::sendzBDS()
     // use mints from zBDS selector if applicable
     vector<CMintMeta> vMintsToFetch;
     vector<CZerocoinMint> vMintsSelected;
-    if (!ZPnyControlDialog::setSelectedMints.empty()) {
-        vMintsToFetch = ZPnyControlDialog::GetSelectedMints();
+    if (!ZBDSControlDialog::setSelectedMints.empty()) {
+        vMintsToFetch = ZBDSControlDialog::GetSelectedMints();
 
         for (auto& meta : vMintsToFetch) {
             CZerocoinMint mint;
@@ -466,8 +466,8 @@ void PrivacyDialog::sendzBDS()
     }
 
     // Clear zbds selector in case it was used
-    ZPnyControlDialog::setSelectedMints.clear();
-    ui->labelzPnySelected_int->setText(QString("0"));
+    ZBDSControlDialog::setSelectedMints.clear();
+    ui->labelzBDSSelected_int->setText(QString("0"));
     ui->labelQuantitySelected_int->setText(QString("0"));
 
     // Some statistics for entertainment
@@ -485,7 +485,7 @@ void PrivacyDialog::sendzBDS()
 
     CAmount nValueOut = 0;
     for (const CTxOut& txout: wtxNew.vout) {
-        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Pny, ";
+        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " BDS, ";
         nValueOut += txout.nValue;
 
         strStats += tr("address: ");

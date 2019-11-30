@@ -10,4 +10,4 @@ Type=Application
 Icon=bds128
 MimeType=x-scheme-handler/bds;
 Categories=Office;Finance;
-StartupWMClass=Pny-qt
+StartupWMClass=BDS-qt

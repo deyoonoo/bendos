@@ -1957,8 +1957,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Mesaĝo: eniri kvanto &gt; 0.</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
-        <translation>Nevalida Pny adreso</translation>
+        <source>Invalid BDS Address</source>
+        <translation>Nevalida BDS adreso</translation>
     </message>
     <message>
         <source>Confirm send coins</source>
@@ -2613,7 +2613,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

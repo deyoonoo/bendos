@@ -2495,7 +2495,7 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i b
         <translation>SEKRETESS</translation>
     </message>
     <message>
-        <source>Enter an amount of Pny to convert to zBDS</source>
+        <source>Enter an amount of BDS to convert to zBDS</source>
         <translation>Mata in en mängd BDS att konvertera till zBDS</translation>
     </message>
     <message>
@@ -2975,8 +2975,8 @@ Högsta tillåtna:</translation>
         <translation>Ingen 'Betala Till' adress inmatad, skapar lokal betalning</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
-        <translation>Ogiltig Pny Adress</translation>
+        <source>Invalid BDS Address</source>
+        <translation>Ogiltig BDS Adress</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -4930,7 +4930,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>Select zBDS to Spend</source>
         <translation>Välj zBDS att Spendera</translation>

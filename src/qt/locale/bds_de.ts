@@ -2380,7 +2380,7 @@ Um das automatische Prägen zu aktivieren ändere 'enablezeromint=0' zu 'enablez
         <translation>PRIVATSPHÄRE</translation>
     </message>
     <message>
-        <source>Enter an amount of Pny to convert to zBDS</source>
+        <source>Enter an amount of BDS to convert to zBDS</source>
         <translation>Geben Sie den Betrag ein, den sie von BDS in zBDS umwandeln möchten</translation>
     </message>
     <message>
@@ -2847,7 +2847,7 @@ Maximal erlaubt:</translation>
         <translation>Keine "Pay To"-Adresse zur Verfügung. Erstelle lokale Zahlung</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
+        <source>Invalid BDS Address</source>
         <translation>Ungültige BDS-Adresse </translation>
     </message>
     <message>
@@ -4749,7 +4749,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>Select zBDS to Spend</source>
         <translation>Wählen Sie die zBDS aus, die Sie ausgeben möchten</translation>

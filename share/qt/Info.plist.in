@@ -38,7 +38,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>io.bds.Pny-Qt</string>
+  <string>io.bds.BDS-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,7 +46,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>io.bds.PnyPayment</string>
+      <string>io.bds.BDSPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>bds</string>
@@ -60,7 +60,7 @@
       <key>UTTypeIdentifier</key>
       <string>io.bds.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Pny payment request</string>
+      <string>BDS payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>

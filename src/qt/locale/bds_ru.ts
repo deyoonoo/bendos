@@ -2388,8 +2388,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in bds.conf</
         <translation>КОНФИДЕНЦИАЛЬНОСТЬ</translation>
     </message>
     <message>
-        <source>Enter an amount of Pny to convert to zBDS</source>
-        <translation>Введите сумму в Pny для  конвертации в zBDS</translation>
+        <source>Enter an amount of BDS to convert to zBDS</source>
+        <translation>Введите сумму в BDS для  конвертации в zBDS</translation>
     </message>
     <message>
         <source>zBDS Control</source>
@@ -2854,7 +2854,7 @@ Maximum allowed: </source>
         <translation>Не предоставляется адрес «Pay To», создающий местный платеж</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
+        <source>Invalid BDS Address</source>
         <translation>неправильный BDS адрес</translation>
     </message>
     <message>
@@ -4757,7 +4757,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>Select zBDS to Spend</source>
         <translation>Выберите zBDS чтобы потратить</translation>
@@ -6159,7 +6159,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Value is below the smallest available denomination (= 1) of zBDS</source>
-        <translation>Значение ниже наименьшего доступного номинала (= 1) zPny</translation>
+        <translation>Значение ниже наименьшего доступного номинала (= 1) zBDS</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>

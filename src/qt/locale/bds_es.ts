@@ -2451,8 +2451,8 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en bd
         <translation>PRIVACIDAD</translation>
     </message>
     <message>
-        <source>Enter an amount of Pny to convert to zBDS</source>
-        <translation>Introduzca la cantidad de BDS que desea convertir a zPny</translation>
+        <source>Enter an amount of BDS to convert to zBDS</source>
+        <translation>Introduzca la cantidad de BDS que desea convertir a zBDS</translation>
     </message>
     <message>
         <source>zBDS Control</source>
@@ -2918,7 +2918,7 @@ Máximo permitido:</translation>
         <translation>No se especificó drección 'Pagar A', por lo que asumimos un pago local</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
+        <source>Invalid BDS Address</source>
         <translation>Dirección BDS Inválida</translation>
     </message>
     <message>
@@ -4820,7 +4820,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
 </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>Select zBDS to Spend</source>
         <translation>Selecciona zBDS para Gastar</translation>

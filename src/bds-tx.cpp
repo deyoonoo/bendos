@@ -47,7 +47,7 @@ static bool AppInitRawTx(int argc, char* argv[])
 
     if (argc < 2 || mapArgs.count("-?") || mapArgs.count("-help")) {
         // First part of help message is specific to this utility
-        std::string strUsage = _("Pny Core bds-tx utility version") + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = _("BDS Core bds-tx utility version") + " " + FormatFullVersion() + "\n\n" +
                                _("Usage:") + "\n" +
                                "  bds-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded bds transaction") + "\n" +
                                "  bds-tx [options] -create [commands]   " + _("Create hex-encoded bds transaction") + "\n" +

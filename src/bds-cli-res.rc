@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Pny"
-            VALUE "FileDescription",    "Pny-cli (OSS RPC client for Pny)"
+            VALUE "CompanyName",        "BDS"
+            VALUE "FileDescription",    "BDS-cli (OSS RPC client for BDS)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "bds-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
             VALUE "OriginalFilename",   "bds-cli.exe"
-            VALUE "ProductName",        "Pny-cli"
+            VALUE "ProductName",        "BDS-cli"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

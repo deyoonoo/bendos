@@ -255,7 +255,7 @@
     </message>
     <message>
         <source>Enter a BDS Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Įveskite Pny adresą, kurį norėtumėte užšifruoti naudojant BIP 38. Vidiniame laukelyje įrašykite slaptą frazę. Paspauskite užšifruoti, jei norite gauti užšifruotą privatųjį raktą.</translation>
+        <translation>Įveskite BDS adresą, kurį norėtumėte užšifruoti naudojant BIP 38. Vidiniame laukelyje įrašykite slaptą frazę. Paspauskite užšifruoti, jei norite gauti užšifruotą privatųjį raktą.</translation>
     </message>
     <message>
         <source>The BDS address to encrypt</source>
@@ -2220,7 +2220,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     </message>
     <message>
         <source>zBDS Control</source>
-        <translation>zPny Kontrolė</translation>
+        <translation>zBDS Kontrolė</translation>
     </message>
     <message>
         <source>zBDS Selected:</source>
@@ -2549,8 +2549,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
         <translation>Klaida: jūsų piniginė užrakinta. Pirmiausia įveskite piniginės slaptažodį.</translation>
     </message>
     <message>
-        <source>Invalid Pny Address</source>
-        <translation>Netinkamas Pny Adresas</translation>
+        <source>Invalid BDS Address</source>
+        <translation>Netinkamas BDS Adresas</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -3401,7 +3401,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     </message>
     </context>
 <context>
-    <name>ZPnyControlDialog</name>
+    <name>ZBDSControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
